@@ -6,6 +6,7 @@ class TagsController < ApplicationController
 
   def show
     @tag = Tag.find(params[:id])
+    @posts = @tag.posts
     render :show
   end
 
@@ -42,7 +43,6 @@ class TagsController < ApplicationController
    @tag.destroy
    redirect_to tags_path
  end
-
 
 
  private

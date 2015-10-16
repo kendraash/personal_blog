@@ -1,7 +1,15 @@
 <h1><%= @tag.name %></h1>
 
-<p><%= link_to "Return to tagss", tags_path %></p>
+<ul>
+  <% @posts.each do |post| %>
+    <li><%= link_to post.title, tag_post_path(@tag, post) %></li>
+  <% end %>
+</ul>
 
+<p><%= link_to "Return to tags", tags_path %></p>
+<p>
+  <%= link_to "Add a Post", new_tag_post_path(@tag) %>
+</p>
 
 <p><%= link_to "Edit", edit_tag_path(@tag) %></p>
 <p><%= link_to "Delete", tag_path(@tag),
