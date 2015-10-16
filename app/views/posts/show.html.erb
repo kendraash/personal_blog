@@ -3,6 +3,10 @@
 <%= @post.author %>
 <%= @post.body %>
 
+<p> Tag:  <%= @tag.name %> </p>
 
 <%= link_to "Edit", edit_tag_post_path(@tag, @post) %>
+|
 <%= link_to "Delete", tag_post_path(@tag, @post), :data => {:confirm => "Are you sure?", :method => "delete"} %>
+
+<p><%= link_to "Return to tags", tags_path %></p>

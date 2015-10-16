@@ -9,7 +9,11 @@
 
 <h1>Posts</h1>
 
-
+<ul>
+  <% @posts.each do |post| %>
+    <li><%= link_to post.title, tag_post_path(post.tag_id, post) %></li>
+  <% end %>
+</ul>
 
 
 <%= link_to "New Tag", new_tag_path %>

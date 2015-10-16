@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
 
-
   def show
     @tag = Tag.find(params[:tag_id])
     @post = Post.find(params[:id])
@@ -16,6 +15,7 @@ class PostsController < ApplicationController
      @tag = Tag.find(params[:tag_id])
      @post = @tag.posts.new(post_params)
      if @post.save
+       flash[:notice] = "Post successfully added!"
        redirect_to tag_path(@post.tag)
      else
        render :new

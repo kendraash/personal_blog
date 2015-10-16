@@ -7,6 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= flash[:alert] %>
+  <%= flash[:notice] %>
+
+
+<div class="columns tweleve">
+  <a class="navbar-brand" style="color: grey;" href="/">Kendra's Blog</a>
+  <a href="/"><img src="../assets/house.png" class="home-btn" /></a>
+
+</div>
 <div class="container">
   <%= yield %>
 

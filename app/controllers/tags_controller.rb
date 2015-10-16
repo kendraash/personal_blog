@@ -1,6 +1,7 @@
 class TagsController < ApplicationController
   def index
     @tags = Tag.all
+    @posts = Post.all
     render :index
   end
 
@@ -18,6 +19,7 @@ class TagsController < ApplicationController
   def create
    @tag = Tag.new(tag_params)
    if @tag.save
+     flash[:notice] = "Tag successfully added!"
      redirect_to  tags_path
    else
      render :new
