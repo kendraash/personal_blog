@@ -1,3 +1,9 @@
 <h1><%= @tag.name %></h1>
 
 <p><%= link_to "Return to tagss", tags_path %></p>
+
+
+<p><%= link_to "Edit", edit_tag_path(@tag) %></p>
+<p><%= link_to "Delete", tag_path(@tag),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"} %></p>
