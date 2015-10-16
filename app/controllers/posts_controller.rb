@@ -28,20 +28,21 @@ class PostsController < ApplicationController
     render :edit
   end
 
- # def update
- #   @post= Post.find(params[:id])
- #   if @post.update(post_params)
- #     redirect_to tag_posts_path(params[:tag_id])
- #   else
- #     render :edit
- #   end
- # end
+ def update
+   @tag = Tag.find(params[:tag_id])
+   @post= Post.find(params[:id])
+   if @post.update(post_params)
+     redirect_to tag_path(params[:tag_id])
+   else
+     render :edit
+   end
+ end
 
- # def destroy
- #   @post = Post.find(params[:id])
- #   @post.destroy
- #   redirect_to tag_path(:tag_id)
- # end
+ def destroy
+   @post = Post.find(params[:id])
+   @post.destroy
+   redirect_to tag_path(params[:tag_id])
+ end
 
 
  private
