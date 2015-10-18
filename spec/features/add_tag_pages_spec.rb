@@ -8,4 +8,10 @@ describe "adding a tag" do
     click_on 'Create Tag'
     expect(page).to have_content 'Posts'
   end
+
+  it "gives error when no name is entered" do
+    visit new_tag_path
+    click_on 'Create Tag'
+    expect(page).to have_content 'errors'
+  end
 end
