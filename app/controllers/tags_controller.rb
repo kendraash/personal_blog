@@ -2,18 +2,15 @@ class TagsController < ApplicationController
   def index
     @tags = Tag.all
     @posts = Post.all
-    render :index
   end
 
   def show
     @tag = Tag.find(params[:id])
     @posts = @tag.posts
-    render :show
   end
 
   def new
     @tag = Tag.new
-    render :new
   end
 
   def create
@@ -28,7 +25,6 @@ class TagsController < ApplicationController
 
  def edit
     @tag = Tag.find(params[:id])
-    render :edit
   end
 
  def update

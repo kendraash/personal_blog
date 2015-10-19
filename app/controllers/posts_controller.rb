@@ -3,7 +3,6 @@ class PostsController < ApplicationController
   def show
     @tag = Tag.find(params[:tag_id])
     @post = Post.find(params[:id])
-    render :show
   end
 
   def new
@@ -25,7 +24,6 @@ class PostsController < ApplicationController
  def edit
     @tag = Tag.find(params[:tag_id])
     @post = Post.find(params[:id])
-    render :edit
   end
 
  def update
